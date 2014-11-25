@@ -18,14 +18,15 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
     <script src="http://d3js.org/d3.v3.min.js"></script>
 
+
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
   <body>
   <script>
 
-var width = 960,
-    height = 500;
+var width = $(window).width(),
+    height = $(window).height();
 
 var vertices = d3.range(100).map(function(d) {
   return [Math.random() * width, Math.random() * height];
