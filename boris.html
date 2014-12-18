@@ -2,108 +2,24 @@
 permalink: /boris/
 ---
 
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title></title>
-    <style>
-  html, body, #map-canvas {
-          height: 100%;
-          margin: 0px;
-          padding: 0px
-        }
-        #panel {
-          margin: 5px auto;
-          background-color: #fff;
-          padding: 5px;
-          width: 598px;
-          background-color: transparent;
-          display: inline;
-          position: absolute;
-          left: 50%;
-          margin-left: -299px;
-          z-index: 5;
-        }
-  button {
-    margin: 0;
-          background-color: green;
-          border-radius: 5px;
-          border: green;
-          color: white;
-          padding: 10px;
-          outline: transparent;
-  }
-  .spaces {
-          background-color: red;
-          border-color: red;
-  }
-  .random {
-    background-color: #FFBA15;
-    border-color: #FFBA15;
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    z-index: 5;
-  }
-  .spinner {
-          position: absolute;
-          top: 50%;
-    left: 50%;
-          margin-top: -50px;
-          margin-left: -50px;
-    width: 100px;
-    height: 100px;
-    z-index: 0;
-    background-color: transparent;
-  }
-  .spinner.spin {
-    -webkit-animation: spin 1000ms infinite linear;
-    -moz-animation: spin 1000ms infinite linear;-name: spin
-    -ms-animation: spin 1000ms infinite linear;-name: spin;
-    z-index: 5;
-  }
-  img{
-          width: 100px;
-  }
-        @media screen and (max-width: 699px) {
-    #panel{
-            width: 340px;
-            margin-left: -170px;
-    }
-    button {
-            margin-top: 10px;
-    }
-    .bikes:nth-of-type(1){
-            margin-left: 17px;
-    }
-        }
-  @-moz-keyframes spin {
-    from { -moz-transform: rotate(0deg); }
-    to { -moz-transform: rotate(359deg); }
-  }
-  @-webkit-keyframes spin {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(359deg); }
-  }
-  @keyframes spin {
-    from {transform:rotate(0deg);}
-    to {transform:rotate(359deg);}
-  }
-    </style>
-      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/boris.css" />
     <script>
 
       $(document).ready(function(){
 
         array = ["My policy on cake is pro having it and pro eating it.","I'm a one-nation Tory.",
         "Too full of drugs, obesity,  underachievement and Labour MPs.","He's a rather engaging geezer",
-    "I've slept with far fewer than 1,000","No one obeys the speed limit except a motorised rickshaw.",
-    "What has the BBC come to? Toilets, that's what","Exams work because they're scary",
-    "A horse is a safer bet than the trains","Face it: it's all your own fat fault"]
+        "I've slept with far fewer than 1,000","No one obeys the speed limit except a motorised rickshaw.",
+        "What has the BBC come to? Toilets, that's what","Exams work because they're scary",
+        "A horse is a safer bet than the trains","Face it: it's all your own fat fault"]
         document.title = '"' + array[Math.floor(Math.random()*array.length)] + '"';
       })
 
@@ -297,8 +213,9 @@ permalink: /boris/
       <button class="spaces" data-number="9" onclick="getBoris()">10+ spaces</button>
       <button class="spaces" data-number="19" onclick="getBoris()">20+ spaces</button>
     </div>
-    <p>
-    <div class="spinner"><img src="/images/bike_wheel.png"></div>
+    <div class="spinner">
+      <img src="/images/bike_wheel.png">
+    </div>
     <button class="random" onclick="getBoris()">Random docking station</button>
     <div id="map-canvas"></div>
     <div id="warnings_panel" style="width:100%;height:10%;text-align:center"></div>
