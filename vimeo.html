@@ -1,0 +1,104 @@
+---
+permalink: /vimeo/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vimeo Staff Picks</title>
+
+<style>
+html,body,div,section,p,a,img,#wrapper{margin: 0; padding: 0;}
+body {padding-top: 5px; background-color: white;}
+#thumbs, #thumbs2 { overflow: auto; margin-left: auto; margin-right: auto border: 0; padding-left: 0%; }
+#thumbs ul, #thumbs2 ul { list-style-type: none; padding: 0; margin: 0px;}
+#thumbs ul li, #thumbs2 ul li { width: 10%; display: inline-block; margin: 0px 0px 0px 1%; vertical-align: top; position: relative;}
+#thumbs ul li a p, #thumbs2 ul li a p { width: 100%; height: 100%; display: block; text-decoration: none; color: white; position: absolute; top: 0; left: 0; overflow: hidden; display: none;}
+section{background-color: red; opacity: 0.5; border-top-right-radius: 30px; border-bottom-left-radius: 30px; width: 100px; height: 85px; position: absolute; top: 0; left: 0; padding-top: 10%; display: none;}
+.thumb { border: 0; float: left; width: 100%; height: auto; background: url(http://a.vimeocdn.com/thumbnails/defaults/default.75x100.jpg); }
+#embed { display: inline-block; height: 420px; width: 756px;  margin: 15px auto 15px 1.5%;}
+#playerwrapper{width: 1200px; margin-left: 2.3%;}
+#portrait { float: left; margin-right: 5px; max-width: 1008px; }
+#stats { display: inline-block; width: 33%; height: 400px; overflow: auto; vertical-align: top; margin: 15px 0 15px 0; float: right; padding: 10px; background-color: #00aaaa; color: white; }
+#stats p {font-family: helvetica; margin-bottom: 10px;}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script>
+
+
+var apiEndpoint = 'http://vimeo.com/api/v2/channel/';
+var oEmbedEndpoint = 'http://vimeo.com/api/oembed.json'
+var oEmbedCallback = 'switchVideo';
+var videosCallback = 'setupGallery';
+var vimeoUsername = 'staffpicks';
+
+// Get the user's videos
+$(document).ready(function() {
+$.getScript(apiEndpoint + vimeoUsername + '/videos.json?callback=' + videosCallback);
+});
+
+function getVideo(url) {
+$.getScript(oEmbedEndpoint + '?url=' + url + '&width=756&height=420&callback=' + oEmbedCallback);
+}
+
+function setupGallery(videos) {
+
+//Set the user's thumbnail and the page title
+
+//Load content
+//$('#stats').prepend('<img id="portrait" src="' + videos[0].user_portrait_medium + '" />');
+//$('#stats h2').html("By" + " " + videos[0].user_name);
+$('#stats p').html((videos[0].description).replace(/\n/g, "<br/>"));
+
+// Load the first video
+getVideo(videos[0].url);
+
+// Add the videos to the gallery
+for (var i = 0; i < 9; i++) {
+var html = '<li><a href="' + videos[i].url + '" id="a' + i + '"><img src="' + videos[i].thumbnail_medium + '" class="thumb" id="img' + i + '" />' + '<section id="sect' + i + '"></section><p id="user' + i + '">' + videos[i].title + '</p>' +  '</a></li>';
+$('#thumbs ul').append(html);
+}
+for (var i = 9; i < videos.length-2; i++) {
+var html = '<li><a href="' + videos[i].url + '"><img src="' + videos[i].thumbnail_medium + '" class="thumb" />' + '<section></section><p id="user' + i + '">' + videos[i].title + '</p>' +  '</a></li>';
+$('#thumbs2 ul').append(html);
+}
+
+// Switch to the video when a thumbnail is clicked
+$('#thumbs a').click(function(event) {
+event.preventDefault();
+getVideo(this.href);
+return false;
+});
+
+$('#thumbs2 a').click(function(event) {
+event.preventDefault();
+getVideo(this.href);
+return false;
+});
+}
+
+function switchVideo(video) {
+$('#embed').html(unescape(video.html));
+//$('#stats h2').html(videos.user_name);
+$('#stats p').html((video.description).replace(/\n/g, "<br/>"));
+//document.getElementById("portrait").src="video.user_portrait_medium";
+
+}
+</script>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="thumbs"><ul></ul></div>
+    <div id="playerwrapper">
+      <div id="embed"></div>
+      <div id="stats">
+        <!--<h2></h2>-->
+        <p></p>
+      </div>
+    </div>
+    <div id="thumbs2"><ul></ul></div>
+  </div>
+</body>
+</html>
