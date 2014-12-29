@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="trevfav2.png">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
@@ -13,18 +19,44 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="{{ site.baseurl }}/instant.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-
-
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
   <body>
+    <div id="wrapper">
+      <div id = "banner">
+        <div id="title">Trevethan Holiday Caravan</div>
+        <div id=menubutton class="button1">
+          <p>--</p><p>--</P><p>--</p>
+        </div>
+
+        <div class="contact">
+          <div id="contact">Contact us:</div>
+          <div id="details">
+            <p>+44 (0)1841 520885</p>
+            <p><a style="color: #6f6f53" href="mailto:sue@trevethanholidaycaravan.co.uk">sue@trevethanholidaycaravan.co.uk</a></p>
+          </div>
+        </div>
+      </div>
+      <div id="headerwrapper"><div class="menu" id="verticalheight">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="seaview.html">Seaview Caravan</a></li>
+          <li id="menugallery"><a href="seaview.html#gallery">Gallery</a></li>
+          <li id="menupricelist"><a href="seaview.html#pricelist">Price list</a></li>
+          <li id="menuattractions"><a href="#attractions">Local Attractions</a></li>
+          <li><a href="map.html">Directions & Map</a></li>
+        </ul>
+      </div>
+
+        {{ content }}
+
+      <div id="credits">Website and landscape photograpy by <a href="http://www.tomrgs.co.uk">Tom Rogers</a> - all rights reserved.
+      </div>
+    </div>
     {% include analytics.html %}
   </body>
 </html>
