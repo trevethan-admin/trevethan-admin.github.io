@@ -4,24 +4,36 @@
 //
 
 // Colors
-$blue: #4183C4; 
+$blue: #4183C4;
 
 // Grays
 $black: #000;
 $darkerGray: #222;
-$darkGray: #333;
 $gray: #666;
 $lightGray: #eee;
 $white: #fff;
+
+$trevethan-blue: #385571;
+$trevethan-drk-blue: #1c558d;
+$darkGray: #383838;
+$light-blue: #d5f1ff;
+$cream: #fff1d5;
+$brown: #6f6f53;
+$silver: #6f6f53;
+
 
 // Font stacks
 $helvetica: "Questrial";
 $helveticaNeue: "Questrial";
 $georgia: "Questrial";
+$source-font: 'Source Sans Pro', sans-serif;
+$dancing-font: 'Dancing Script', cursive;
+$arimo-font: 'Arimo', sans-serif;
+$roboto-font: 'Roboto';
 
-// Mobile breakpoints
-@mixin mobile {
-  @media screen and (max-width: 640px) {
-    @content;
-  }
-}
+// Widths:
+$site-max-width: 960px;
+$xl:             1080px;
+$lrg:            $site-max-width;
+$med:            768px;
+$sml:            540px;

@@ -1,0 +1,155 @@
+@import "_variables";
+@import "_mixins";
+
+a {
+  color: $trevethan-drk-blue;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover, &:active {
+    color: $trevethan-drk-blue;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  max-width: $xl;
+  width: 100%;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: $arimo-font;
+  @include respond-to-max($xl) {
+    padding: 0 20px;
+  }
+}
+
+.banner {
+  margin-top: 10px;
+}
+
+h1 {
+  font-family: $dancing-font;
+  font-size: 2rem;
+  color: #1c558d;
+  display: inline;
+}
+
+.menubutton {
+  display: none;
+}
+
+.contact {
+  display: inline;
+  letter-spacing: 1px;
+  float: right;
+  color: $silver;
+  font-family: $source-font;
+  font-weight: 400;
+  vertical-align: bottom;
+  font-size: 0.9rem;
+  padding-left: 0;
+  @include respond-to-max($med) {
+    float: left;
+  }
+}
+
+.contact span {
+  float: right;
+  margin-left: 5px;
+}
+
+.full-width {
+  clear: both;
+  @include respond-to-max($xl) {
+    margin: 0 -20px;
+  }
+}
+
+.menu ul {
+  background-color: $trevethan-blue;
+  padding: 17px 10px;
+  margin-bottom: 20px;
+  vertical-align: top;
+}
+
+.menu.gallery-shown {
+  @include respond-to($xl) {
+    display: inline-block;
+    width: 20%;
+    margin: 0;
+
+    li {
+      display: block;
+      padding: 11px 10px;
+    }
+  }
+}
+
+.menu li {
+  display: inline;
+  padding: 10px;
+}
+
+.menu li:nth-of-type(3),
+.menu li:nth-of-type(4),
+.menu li:nth-of-type(5) {
+  @include respond-to-max($med) {
+    display: none;
+  }
+}
+
+.sliding-gallery {
+  position: relative;
+  padding-bottom: 36.3%;
+  margin: 0 20px;
+
+  @include respond-to($xl) {
+    padding-bottom: .79*36.3%;
+    width: 79%;
+    float: right;
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.sliding-gallery > img {
+  position: absolute;
+  left:0;
+  top:0;
+}
+
+.menu a {
+  color: white;
+  font-family: $roboto-font;
+  font-weight: 300;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  font-family: $roboto-font;
+  background-color: $trevethan-blue;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 1px 0;
+  text-align: center;
+}
+
+.footer li {
+  display: inline;
+  padding: 10px;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

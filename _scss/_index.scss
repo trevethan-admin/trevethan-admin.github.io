@@ -1,0 +1,67 @@
+@import "_variables";
+@import "_mixins";
+
+.blurb {
+  clear: both;
+  padding: 6px 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  background-color: $cream;
+  font-size: 1.1rem;
+  font-family: $arimo-font;
+  color: $brown;
+  line-height: 1.5;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 2px dashed $trevethan-drk-blue;
+  margin-bottom: 15px;
+}
+
+.home-photo-holder {
+  display: inline-block;
+  width: 40%;
+  margin-bottom: 15px;
+}
+
+.home-photo {
+  width: 100%;
+  height: auto;
+}
+
+.caravan {
+  width: 50%;
+  margin-top: 10px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  color: $trevethan-drk-blue;
+  line-height: 30px;
+  letter-spacing: 1px;
+  margin-left: 5%;
+  font-size: 1.2rem;
+}
+
+.attraction-container {
+  padding: 20px;
+  background-color: $light-blue;
+  margin-top: 20px;
+}
+
+.attractions {
+  width: 58%;
+  display: inline-block;
+  color: $darkGray;
+}
+
+.attractions p {
+  margin: 10px;
+}
+
+.bay-photo {
+  width: 40%;
+  height: auto;
+  display: inline-block;
+  float: right;
+}

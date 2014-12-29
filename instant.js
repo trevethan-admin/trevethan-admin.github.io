@@ -6,8 +6,8 @@ $(document).ready(function(){
   //slider funtion
 
   $(function(){
-      $('.fadein img:gt(0)').hide();
-      setInterval(function(){$('.fadein :first-child').fadeOut(1000).next('img').fadeIn(1000).end().appendTo('.fadein');}, 5000);
+      $('.sliding-gallery img:gt(0)').hide();
+      setInterval(function(){$('.sliding-gallery :first-child').fadeOut(1000).next('img').fadeIn(1000).end().appendTo('.sliding-gallery');}, 5000);
   });
 
 

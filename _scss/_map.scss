@@ -1,0 +1,20 @@
+@import "_variables";
+@import "_mixins";
+
+.map {
+  width: 50%;
+  height: 400px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.directions {
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  color: #385571;
+  width: 40%;
+  letter-spacing: 1px;
+  margin-top: 50px;
+  line-height: 30px;
+}

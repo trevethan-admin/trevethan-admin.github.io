@@ -1,0 +1,97 @@
+@import "_variables";
+@import "_mixins";
+
+.seaview {
+  font-family: $dancing-font;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  color: $silver;
+}
+
+.gallery {
+  display: inline-block;
+  width: 45%;
+  @include respond-to-max($xl) {
+    width: 100%;
+  }
+}
+
+.mainpic {
+  width: 100%;
+  display: inline-block;
+}
+
+.bz,
+.cz,
+.dz,
+.ez {
+  display: none;
+}
+
+li.mini {
+  display: inline;
+  position: relative;
+}
+
+li.mini img {
+  width: 19%;
+}
+
+ul.mini-container {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.caravan-blurb {
+  font-family: $arimo-font;
+  color: $silver;
+  margin: 20px 0;
+  @include respond-to($xl) {
+    width: 47%;
+    display: inline-block;
+    float: right;
+    margin: -5px 0 0 0;
+  }
+}
+
+.caravan-blurb p {
+  margin: 0;
+}
+
+.booking {
+  clear: both;
+  color: #8d1c38;
+  padding: 5px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+table {
+  margin: 30px 0;
+  background-color: #fff1d5;
+  width: 100%;
+}
+
+th {
+  padding: 10px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #8d1c38;
+  color: #385571;
+}
+
+td {
+  padding-left: 10px;
+}
+
+caption {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
