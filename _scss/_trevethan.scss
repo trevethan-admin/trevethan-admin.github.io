@@ -76,7 +76,7 @@ h1 {
   vertical-align: top;
 }
 
-.menu.gallery-shown {
+.menu.gallery-shown ul {
   @include respond-to($xl) {
     display: inline-block;
     width: 20%;
