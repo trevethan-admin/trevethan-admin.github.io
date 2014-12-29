@@ -13,13 +13,13 @@ $(document).ready(function(){
 
   //gallery funtion
 
-  $('#minicontainer img').click(function(){
-      $('#mainpic').attr('src',$(this).attr('src').replace('thumb','large'));
+  $('.mini-container img').click(function(){
+      $('.main-pic').attr('src',$(this).attr('src').replace('thumb','large'));
   });
 
   //responsive menu function
 
-  $('#menubutton').click(function(){
+  $('.menubutton').click(function(){
 
   $('.menu').toggle();
   $('#menubutton').toggleClass('button');
