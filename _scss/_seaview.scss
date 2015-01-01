@@ -9,7 +9,7 @@
   color: $silver;
 }
 
-.gallery {
+#gallery {
   display: inline-block;
   width: 45%;
   @include respond-to-max($xl) {
