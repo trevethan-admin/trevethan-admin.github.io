@@ -46,7 +46,7 @@
         </ul>
       </div>
 
-      <div class="menu full-width {% if page.title == 'index' %} gallery-shown {% endif %}">
+      <div class="menu full-width {% if page.category == 'index' %} gallery-shown {% endif %}">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="seaview.html">Seaview Caravan</a></li>
@@ -56,7 +56,7 @@
           <li><a href="map.html">Directions<span> & Map</span></a></li>
         </ul>
 
-        {% if page.catagory == "index" %}
+        {% if page.category == "index" %}
           <div class='sliding-gallery'>
             <img id="pic1" src='images/img1comp.jpg'>
             <img src='images/img2comp.jpg'>
